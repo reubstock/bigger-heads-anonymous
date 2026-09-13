@@ -66,9 +66,9 @@
     display: block;
     width: 100%;
     max-width: 100%;
-    height: auto;
-    aspect-ratio: 1400 / 704;
+    height: clamp(260px, 52vh, 560px);
     object-fit: cover;
+    object-position: 50% 32%;
   }
   .hero-band {
     background: var(--hero-shade);
