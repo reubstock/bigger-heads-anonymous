@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A 12 Step Group for brilliant dummies.">
+<title>Bigger Heads Anonymous</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Libre+Franklin:wght@500;700&display=swap">
+<style>
+  :root {
+    --paper: #f3ede0;
+    --paper-2: #e9e1cf;
+    --ink: #1b1d2c;
+    --ink-soft: #4a4c5c;
+    --rule: #c9bfa6;
+    --gold: #b8860b;
+    --gold-soft: #d9b24a;
+    --red: #a83228;
+    --hero-shade: rgba(20, 22, 38, 0.86);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #16172a;
+      --paper-2: #1f2137;
+      --ink: #efe8d6;
+      --ink-soft: #b6b0a0;
+      --rule: #3a3c55;
+      --gold: #d9b24a;
+      --gold-soft: #b8860b;
+      --red: #e0574a;
+      --hero-shade: rgba(14, 15, 26, 0.9);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #16172a;
+    --paper-2: #1f2137;
+    --ink: #efe8d6;
+    --ink-soft: #b6b0a0;
+    --rule: #3a3c55;
+    --gold: #d9b24a;
+    --gold-soft: #b8860b;
+    --red: #e0574a;
+    --hero-shade: rgba(14, 15, 26, 0.9);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    line-height: 1.55;
+  }
+  a { color: inherit; }
+  a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    background: #0e0f1a;
+    color: #f3ede0;
+  }
+  .hero img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1400 / 704;
+    object-fit: cover;
+  }
+  .hero-band {
+    background: var(--hero-shade);
+    border-top: 4px solid var(--gold);
+    padding-block: 28px 32px;
+    padding-inline: 20px;
+  }
+  .hero-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px 32px;
+  }
+  .eyebrow {
+    font-family: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin: 0 0 8px;
+  }
+  h1 {
+    font-family: "Alfa Slab One", "Rockwell", "Georgia", serif;
+    font-weight: 400;
+    font-size: clamp(34px, 6vw, 64px);
+    line-height: 1;
+    margin: 0;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+    color: #f3ede0;
+  }
+  .tagline {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-style: italic;
+    font-size: clamp(17px, 2.2vw, 22px);
+    margin: 0;
+    color: #d8d0bc;
+    max-width: 22ch;
+  }
+
+  /* Intro */
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding-inline: 20px;
+  }
+  .intro {
+    padding-block: 48px 8px;
+  }
+  .intro p {
+    margin: 0 0 1em;
+    font-size: 20px;
+  }
+  .intro p:first-child::first-letter {
+    font-family: "Alfa Slab One", serif;
+    font-size: 3.1em;
+    line-height: 0.8;
+    float: left;
+    padding-right: 10px;
+    padding-top: 6px;
+    color: var(--gold);
+  }
+
+  /* Steps */
+  .steps-head {
+    padding-block: 32px 8px;
+    border-bottom: 3px double var(--rule);
+    margin-bottom: 8px;
+  }
+  .steps-head h2 {
+    font-family: "Alfa Slab One", "Rockwell", serif;
+    font-weight: 400;
+    font-size: clamp(26px, 4vw, 36px);
+    line-height: 1.1;
+    margin: 0 0 6px;
+    text-wrap: balance;
+  }
+  .steps-head p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  ol.steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: step;
+  }
+  ol.steps li {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 0 18px;
+    align-items: start;
+    padding-block: 26px;
+    border-bottom: 1px solid var(--rule);
+  }
+  ol.steps li:last-child { border-bottom: none; }
+  ol.steps li::before {
+    content: counter(step);
+    font-family: "Alfa Slab One", serif;
+    font-size: 44px;
+    line-height: 0.9;
+    color: var(--gold);
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    padding-top: 2px;
+  }
+  ol.steps li p {
+    margin: 0;
+    max-width: 62ch;
+  }
+
+  /* Closing */
+  .closing {
+    margin-top: 32px;
+    background: var(--paper-2);
+    border-top: 4px solid var(--gold);
+    padding-block: 40px 48px;
+    padding-inline: 20px;
+  }
+  .closing-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .closing p { margin: 0 0 0.8em; }
+  .closing .small {
+    font-family: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    margin-top: 24px;
+  }
+  .closing .small a { text-decoration-color: var(--gold); }
+
+  @media (max-width: 480px) {
+    body { font-size: 17px; }
+    .intro p { font-size: 18px; }
+    ol.steps li { grid-template-columns: 44px 1fr; gap: 0 14px; }
+    ol.steps li::before { font-size: 32px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    ol.steps li::before { transition: color 200ms ease; }
+    ol.steps li:hover::before { color: var(--red); }
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <img src="hero.jpg" alt="A scene from Idiocracy: President Camacho, in a star-spangled tank top and a gold presidential medal, rests his hand on the head of a seated man while his cabinet looks on.">
+  <div class="hero-band">
+    <div class="hero-inner">
+      <div>
+        <p class="eyebrow">Est. whenever you finally noticed</p>
+        <h1>Bigger Heads Anonymous</h1>
+      </div>
+      <p class="tagline">A 12 Step Group for brilliant dummies.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="wrap intro">
+    <p>You are very smart. Everyone knows this, because you have told them. Somewhere along the way the head got bigger than the room it was in, and the people in the room got quieter. Bigger Heads is for the ones who have started to notice the quiet.</p>
+    <p>We have no leaders, only people who used to be sure they should be the leader. We have no dues. We have one requirement for membership: a desire to stop being right at people.</p>
+  </section>
+
+  <section class="wrap">
+    <div class="steps-head">
+      <h2>The 12 Steps of Bigger Heads Anonymous</h2>
+      <p>Read aloud at the opening of every meeting, by whoever least wants to.</p>
+    </div>
+    <ol class="steps">
+      <li><p>We admitted we were powerless over being right — and that, disturbingly often, we weren't.</p></li>
+      <li><p>Came to believe that someone less intelligent than us might know something we don't.</p></li>
+      <li><p>Made a decision to stop explaining things nobody asked us to explain.</p></li>
+      <li><p>Made a searching and fearless inventory of all the subjects about which we have strong opinions and almost no actual knowledge.</p></li>
+      <li><p>Admitted to ourselves, to another human being, and eventually in public that we had no fucking idea.</p></li>
+      <li><p>Became entirely ready to stop correcting people when the correction added nothing whatsoever.</p></li>
+      <li><p>Humbly asked, “What do you think?” — and then actually listened to the answer.</p></li>
+      <li><p>Made a list of all the people we'd made feel stupid, especially when they weren't.</p></li>
+      <li><p>Made direct amends to such people wherever possible, except when we couldn't get through the apology without mentioning that we were, technically, right.</p></li>
+      <li><p>Continued to be wrong and, when we were, promptly admitted it before anyone could screenshot the evidence.</p></li>
+      <li><p>Sought through silence and reflection to improve our ability to distinguish an insight from a thought we just had.</p></li>
+      <li><p>Having experienced a slight reduction in unbearable cleverness, we tried to practice these principles in all our affairs — while remembering that joining Bigger Heads was itself an extremely Bigger Head thing to do.</p></li>
+    </ol>
+  </section>
+</main>
+
+<footer class="closing">
+  <div class="closing-inner">
+    <p>Meetings are held wherever two or more Bigger Heads are gathered and one of them has managed not to interrupt. Newcomers are welcome. Please do not explain the program to the person who has been attending for eleven years.</p>
+    <p>Keep coming back. It works if you shut up.</p>
+    <p class="small">Required viewing for Step One: <a href="https://www.youtube.com/watch?v=JBuiyU-siuQ&t=17s" target="_blank" rel="noopener">the Camacho address</a>. Image from <em>Idiocracy</em> (2006), used here because it was the best available portrait of the condition.</p>
+  </div>
+</footer>
+</body>
+</html>
