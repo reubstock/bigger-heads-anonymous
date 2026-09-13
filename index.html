@@ -66,9 +66,11 @@
     display: block;
     width: 100%;
     max-width: 100%;
-    height: clamp(260px, 52vh, 560px);
+    height: auto;
+    aspect-ratio: 1400 / 704;
+    max-height: 86vh;
     object-fit: cover;
-    object-position: 50% 32%;
+    object-position: 50% 60%;
   }
   .hero-band {
     background: var(--hero-shade);
@@ -208,6 +210,15 @@
   }
   .closing .small a { text-decoration-color: var(--gold); }
 
+  @media (min-width: 900px) {
+    .hero-band {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      border-top: none;
+      background: linear-gradient(to top, rgba(14, 15, 26, 0.94) 0%, rgba(14, 15, 26, 0.78) 60%, rgba(14, 15, 26, 0) 100%);
+      padding-block: 72px 36px;
+    }
+  }
   @media (max-width: 480px) {
     body { font-size: 17px; }
     .intro p { font-size: 18px; }
